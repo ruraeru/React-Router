@@ -6,9 +6,16 @@ import SpiderMan from "../Screens/SpiderMan";
 import Header from './Header';
 import Counter from '../Screens/Counter';
 import TodoList from '../TodoList/RootTodo';
-import InfiniteScroll from '../InfinitePicture/InfiniteScroll';
+import InfiniteScroll from '../InfinitePicture/App';
 import Loginout from '../loginLogout/App';
 import ColorfulCounter from '../colorfulCounter/App';
+import styled from 'styled-components';
+
+const Width = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`
 
 export default () => (
     <Router>
@@ -18,7 +25,9 @@ export default () => (
         <Route path="/spiderman" component={SpiderMan} />
         <Route path="/counter" component={Counter} />
         <Route path="/todolist" component={TodoList} />
-        <Route path="/infinitescroll" component={InfiniteScroll} />
+        <Width>
+            <Route path="/infinitescroll" component={InfiniteScroll} />
+        </Width>
         <Route path="/loginform" component={Loginout} />
         <Route path="/colorfulcounter" component={ColorfulCounter} />
     </Router>
